@@ -25,6 +25,7 @@ const Login = () => {
                     <label for="passwordInput" >Password</label>
                     <input type="password" class="form-control" id="inputPassword" placeholder="Password" onChange={(event) => setPassword(event.target.value)}/>
                 </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
             </form>
         </div>
     );      

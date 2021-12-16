@@ -49,6 +49,7 @@ const RegisterUser = () => {
                     <label for="lastNameInput" >Last Name </label>
                     <input type="lastName" class="form-control" id="lastNameInput" placeholder="Last Name" onChange={(event) => setLastName(event.target.value)}/>
                 </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
             </form>
         </div>
     );
