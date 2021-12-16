@@ -8,9 +8,7 @@ import jwtDecode from 'jwt-decode';
 class App extends Component {
     constructor(props) {
         super(props);
-        this.state = { 
-
-        }
+        this.state = { }
     }
 
     componentDidMount() {
@@ -18,7 +16,7 @@ class App extends Component {
         try{
             const user = jwtDecode(jwt);
             this.setState({user})
-            
+
         } catch {}
     }
 
