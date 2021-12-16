@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HomePage from './HomePage/HomePage';
 import RegisterUser from './RegisterUser/RegisterUser';
 import Login from './Login/Login';
+import jwtDecode from 'jwt-decode';
 
 class App extends Component {
     constructor(props) {
@@ -11,6 +12,16 @@ class App extends Component {
 
         }
     }
+
+    componentDidMount() {
+        const jwt = localStorage.getItem('token');
+        try{
+            const user = jwtDecode(jwt);
+            this.setState({user})
+            
+        } catch {}
+    }
+
     render() { 
         return ( 
             <Router>
