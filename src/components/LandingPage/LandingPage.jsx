@@ -1,6 +1,6 @@
 import React from 'react';
 
-const HomePage = () => {
+const LandingPage = () => {
     return (
         <div class="container-fluid">
             <span>
@@ -11,4 +11,4 @@ const HomePage = () => {
     );
 }
  
-export default HomePage;
+export default LandingPage;

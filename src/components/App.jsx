@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import HomePage from './HomePage/HomePage';
+import LandingPage from './LandingPage/LandingPage';
 import RegisterUser from './RegisterUser/RegisterUser';
 import Login from './Login/Login';
 import jwtDecode from 'jwt-decode';
@@ -24,7 +24,7 @@ class App extends Component {
         return ( 
             <Router>
                 <Routes>
-                    <Route path="/" element={<HomePage />} />
+                    <Route path="/" element={<LandingPage />} />
                     <Route path="/register" element={<RegisterUser />} />
                     <Route path="/login" element={<Login />} />
                 </Routes>
