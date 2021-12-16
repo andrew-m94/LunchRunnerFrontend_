@@ -11,7 +11,7 @@ const Login = () => {
         let response = await axios.post("http://127.0.0.1:8000/api/auth/login/", loginInfo);
         console.log(response.data);
         localStorage.setItem("token", response.data.access);
-        window.location = "/";
+        window.location = "/home";
     }
 
     return ( 

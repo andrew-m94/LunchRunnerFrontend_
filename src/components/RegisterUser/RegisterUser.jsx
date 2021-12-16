@@ -22,7 +22,7 @@ const RegisterUser = () => {
         console.log(response.data);
         if (response.request.status === 201) {
           alert("Registration Complete, Please sign in.");
-          return (window.location = "/login");
+          window.location = "/login";
         }
     };
 
