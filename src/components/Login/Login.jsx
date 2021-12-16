@@ -15,8 +15,8 @@ const Login = () => {
     }
 
     return ( 
-        <div class="container-fluid" onSubmit={(event) => handleSubmit(event)}>
-            <form>
+        <div class="container-fluid">
+            <form onSubmit={(event) => handleSubmit(event)}>
                 <div class="form-group">
                     <label for="usernameInput" >Username </label>
                     <input type="username" class="form-control" id="usernameInput" placeholder="Username" onChange={(event) => setUsername(event.target.value)}/>

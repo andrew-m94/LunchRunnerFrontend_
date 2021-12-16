@@ -27,8 +27,8 @@ const RegisterUser = () => {
     };
 
     return ( 
-        <div class="container-fluid" onSubmit={(event) => handleSubmit(event)}>
-            <form>
+        <div class="container-fluid">
+            <form onSubmit={(event) => handleSubmit(event)}>
                 <div class="form-group">
                     <label for="usernameInput" >Username </label>
                     <input type="username" class="form-control" id="usernameInput" placeholder="Username" onChange={(event) => setUsername(event.target.value)}/>
@@ -38,15 +38,15 @@ const RegisterUser = () => {
                     <input type="password" class="form-control" id="inputPassword" placeholder="Password" onChange={(event) => setPassword(event.target.value)}/>
                 </div>
                 <div class="form-group">
-                    <label for="emailInput" >Username </label>
+                    <label for="emailInput" >Email </label>
                     <input type="email" class="form-control" id="emailInput" placeholder="Email" onChange={(event) => setEmail(event.target.value)}/>
                 </div>
                 <div class="form-group">
-                    <label for="firstNameInput" >Username </label>
+                    <label for="firstNameInput" >First Name </label>
                     <input type="firstName" class="form-control" id="firstNameInput" placeholder="First Name" onChange={(event) => setFirstName(event.target.value)}/>
                 </div>
                 <div class="form-group">
-                    <label for="lastNameInput" >Username </label>
+                    <label for="lastNameInput" >Last Name </label>
                     <input type="lastName" class="form-control" id="lastNameInput" placeholder="Last Name" onChange={(event) => setLastName(event.target.value)}/>
                 </div>
             </form>
