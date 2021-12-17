@@ -7,20 +7,27 @@ import Login from './Login/Login';
 import jwtDecode from 'jwt-decode';
 import FindRunner from './FindRunner/FindRunner';
 import CreateRun from './CreateRun/CreateRun';
+import Orders from './Orders/Orders';
 
 class App extends Component {
     constructor(props) {
         super(props);
-        this.state = { }
+        this.state = { };
+        this.lunchGroupId = 0;
     }
 
     componentDidMount() {
         const jwt = localStorage.getItem('token');
         try{
             const user = jwtDecode(jwt);
-            this.setState({user})
+            this.setState({user});
 
         } catch {}
+    }
+
+    getLunchGroup = (lunchGroupId) => {
+        this.lunchGroupId = lunchGroupId;
+        this.setState({});
     }
 
     render() { 
@@ -30,11 +37,10 @@ class App extends Component {
                     <Route path="/" element={<LandingPage />} />
                     <Route path="/register" element={<RegisterUser />} />
                     <Route path="/login" element={<Login />} />
-                </Routes>
-                <Routes>
                     <Route path="/home" element={<HomePage />} />
-                    <Route path="/find-runner" element={<FindRunner />} />
+                    <Route path="/find-runner" element={<FindRunner getLunchGroup={this.getLunchGroup} />} />
                     <Route path="/create-run" element={<CreateRun />} />
+                    <Route path="/orders" element={<Orders lunchGroupId={this.lunchGroupId}/>} />
                 </Routes>
             </Router>
         );
