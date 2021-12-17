@@ -23,7 +23,7 @@ const Login = () => {
                     </div>
                 <div class="form-group">
                     <label for="passwordInput" >Password</label>
-                    <input type="password" class="form-control" id="inputPassword" placeholder="Password" onChange={(event) => setPassword(event.target.value)}/>
+                    <input type="password" class="form-control" id="passwordInput" placeholder="Password" onChange={(event) => setPassword(event.target.value)}/>
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
