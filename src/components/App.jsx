@@ -8,6 +8,7 @@ import jwtDecode from 'jwt-decode';
 import FindRunner from './FindRunner/FindRunner';
 import CreateRun from './CreateRun/CreateRun';
 import Orders from './Orders/Orders';
+import CreateOrder from './CreateOrder/CreateOrder';
 
 class App extends Component {
     constructor(props) {
@@ -41,6 +42,7 @@ class App extends Component {
                     <Route path="/find-runner" element={<FindRunner getLunchGroup={this.getLunchGroup} />} />
                     <Route path="/create-run" element={<CreateRun />} />
                     <Route path="/orders" element={<Orders lunchGroupId={this.lunchGroupId}/>} />
+                    <Route path="/create-order" element={<CreateOrder lunchGroupId={this.lunchGroupId}/>} />
                 </Routes>
             </Router>
         );
