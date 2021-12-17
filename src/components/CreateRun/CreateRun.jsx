@@ -16,7 +16,8 @@ const CreateRun = () => {
 
     let handleSubmit = async (event) => {
         event.preventDefault();
-        let response = await axios.post("http://127.0.0.1:8000/api/lunchgroups/runner/", newRun);
+        const jwt = localStorage.getItem('token');
+        let response = await axios.post("http://127.0.0.1:8000/api/lunchgroups/runner/", newRun, {headers: {Authorization: 'Bearer ' + jwt}});
         console.log(response.data);
         if (response.request.status === 201) {
           alert("Run Scheduled");
