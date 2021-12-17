@@ -13,7 +13,6 @@ const FindRunner = () => {
         let response = await axios.get('http://127.0.0.1:8000/api/lunchgroups/all/', {headers: {Authorization: 'Bearer ' + jwt}})
         console.log(response.data);
         setRunList(response.data);
-        console.log(runList);
     }
 
     return ( 
