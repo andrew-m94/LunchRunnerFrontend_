@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router';
 
 const Orders = (props) => {
     const[orderList, setOrderList] = useState([]);
@@ -15,6 +16,8 @@ const Orders = (props) => {
         setOrderList(response.data);
     }
 
+    let navigate = useNavigate();
+
     return (
         <div class="container-fluid">
             <h1>Orders</h1>
@@ -28,6 +31,7 @@ const Orders = (props) => {
             </li>
             ))}
             </ul>
+            <button type="button" class="btn btn-primary" onClick={(event) => navigate(`/create-order`)} >Add an Order!</button>
         </div>
     );
 }
