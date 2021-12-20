@@ -6,12 +6,14 @@ const CreateRun = () => {
     const[departureTime, setDepartureTime] = useState("");
     const[dropLocation, setDropLocation] = useState("");
     const[dropTime, setDropTime] = useState("");
+    const[isPrivate, setIsPrivate] = useState(false);
 
     const newRun = {
         pickup_from: pickupFrom,
         departure_time:departureTime,
         drop_location: dropLocation,
-        drop_time: dropTime
+        drop_time: dropTime,
+        private: isPrivate
     }
 
     let handleSubmit = async (event) => {
@@ -44,6 +46,12 @@ const CreateRun = () => {
                 <div class="form-group">
                     <label for="dropTimeInput" >Estimated Return Time</label>
                     <input type="dropTime" class="form-control" id="dropTimeInput" placeholder="HH:MM" onChange={(event) => setDropTime(event.target.value)}/>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="true" id="flexCheckDefault" onChange={(event) => setIsPrivate(event.target.value)}/>
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Invite Required?
+                    </label>
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
