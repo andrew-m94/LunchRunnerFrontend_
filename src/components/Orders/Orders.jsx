@@ -5,10 +5,12 @@ import { useNavigate } from 'react-router';
 const Orders = (props) => {
     const[orderList, setOrderList] = useState([]);
     const[inviteCode, setInviteCode] = useState("");
-    let isPrivate = props.lunchGroup.private;
+    const[isPrivate, setIsPrivate] = useState(props.lunchGroup.private);
 
     useEffect( () => {
-        if(isPrivate === false) {getOrders()}
+        if(isPrivate === false) {
+            getOrders()
+        }
     }, [isPrivate])
 
     let getOrders = async () => {
@@ -18,9 +20,10 @@ const Orders = (props) => {
         setOrderList(response.data);
     }
 
-    let handleSubmit = () => {
-        if(inviteCode === props.lunchGroup.invite_code){isPrivate = true}
-        else{alert("That code is incorrect!")}
+    let handleSubmit = (event) => {
+        event.preventDefault();
+        if(inviteCode === props.lunchGroup.invite_code){setIsPrivate(false)}
+        else{alert("That code is incorrect!")};
     }
 
     let navigate = useNavigate();
