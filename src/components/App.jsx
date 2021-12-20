@@ -14,7 +14,7 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = { };
-        this.lunchGroupId = 0;
+        this.lunchGroup = [];
     }
 
     componentDidMount() {
@@ -26,8 +26,8 @@ class App extends Component {
         } catch {}
     }
 
-    getLunchGroup = (lunchGroupId) => {
-        this.lunchGroupId = lunchGroupId;
+    getLunchGroup = (lunchGroup) => {
+        this.lunchGroup = lunchGroup
         this.setState({});
     }
 
@@ -41,8 +41,8 @@ class App extends Component {
                     <Route path="/home" element={<HomePage />} />
                     <Route path="/find-runner" element={<FindRunner getLunchGroup={this.getLunchGroup} />} />
                     <Route path="/create-run" element={<CreateRun />} />
-                    <Route path="/orders" element={<Orders lunchGroupId={this.lunchGroupId}/>} />
-                    <Route path="/create-order" element={<CreateOrder lunchGroupId={this.lunchGroupId}/>} />
+                    <Route path="/orders" element={<Orders lunchGroup={this.lunchGroup}/>} />
+                    <Route path="/create-order" element={<CreateOrder lunchGroupId={this.lunchGroup.id}/>} />
                 </Routes>
             </Router>
         );
