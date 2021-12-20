@@ -16,9 +16,9 @@ const FindRunner = (props) => {
         setRunList(response.data);
     }
 
-    let handleClick = (event, lunchgroupId) => {
+    let handleClick = (event, lunchgroup) => {
         event.preventDefault();
-        props.getLunchGroup(lunchgroupId);
+        props.getLunchGroup(lunchgroup);
     }
 
     let navigate = useNavigate();
@@ -28,7 +28,7 @@ const FindRunner = (props) => {
             <h1>FindRunner</h1>
             <ul class="list-group">
             {runList.map(run => (
-                <button type="button" class="list-group-item list-group-item-action" onClick={(event) => {handleClick(event, run.id); navigate(`/orders`)}}>
+                <button type="button" class="list-group-item list-group-item-action" onClick={(event) => {handleClick(event, run); navigate(`/orders`)}}>
                     <div class="d-flex w-100 justify-content-between">
                         <h5 class="mb-1">From: {run.pickup_from}</h5>
                     </div>
