@@ -46,7 +46,7 @@ const CreateRun = () => {
         console.log(response.data);
         if (response.request.status === 201) {
           alert("Run Scheduled");
-          window.location = "/find-runner";
+          window.location = "/my-runs";
         }
     };
 
