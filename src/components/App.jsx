@@ -9,6 +9,7 @@ import FindRunner from './FindRunner/FindRunner';
 import CreateRun from './CreateRun/CreateRun';
 import Orders from './Orders/Orders';
 import CreateOrder from './CreateOrder/CreateOrder';
+import MyRuns from './MyRuns/MyRuns';
 
 class App extends Component {
     constructor(props) {
@@ -40,6 +41,7 @@ class App extends Component {
                     <Route path="/login" element={<Login />} />
                     <Route path="/home" element={<HomePage />} />
                     <Route path="/find-runner" element={<FindRunner getLunchGroup={this.getLunchGroup} />} />
+                    <Route path="/my-runs" element = {<MyRuns />} />
                     <Route path="/create-run" element={<CreateRun />} />
                     <Route path="/orders" element={<Orders lunchGroup={this.lunchGroup}/>} />
                     <Route path="/create-order" element={<CreateOrder lunchGroupId={this.lunchGroup.id}/>} />
