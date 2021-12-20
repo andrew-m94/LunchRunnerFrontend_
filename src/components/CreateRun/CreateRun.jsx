@@ -8,7 +8,7 @@ const CreateRun = () => {
     const[dropTime, setDropTime] = useState("");
     const[isPrivate, setIsPrivate] = useState(false);
 
-    const newRun = {
+    let newRun = {
         pickup_from: pickupFrom,
         departure_time:departureTime,
         drop_location: dropLocation,
@@ -16,8 +16,31 @@ const CreateRun = () => {
         private: isPrivate
     }
 
+    let generateInviteCode = () => {
+        let codeLength = 15;
+        let charList = '';
+        let code = '';
+        for (var i=32; i<=127;i++) {charList += String.fromCharCode(i)};
+        for (let i = 0; i < codeLength; i++) {
+            const characterIndex = Math.round(Math.random() * charList.length);
+            code = code + charList.charAt(characterIndex);
+        }
+        return code;
+    }
+
     let handleSubmit = async (event) => {
         event.preventDefault();
+        if(isPrivate === "true") {
+            let inviteCode = generateInviteCode();
+            newRun = {
+                pickup_from: pickupFrom,
+                departure_time:departureTime,
+                drop_location: dropLocation,
+                drop_time: dropTime,
+                private: isPrivate,
+                invite_code: inviteCode
+            }
+        };
         const jwt = localStorage.getItem('token');
         let response = await axios.post("http://127.0.0.1:8000/api/lunchgroups/runner/", newRun, {headers: {Authorization: 'Bearer ' + jwt}});
         console.log(response.data);
