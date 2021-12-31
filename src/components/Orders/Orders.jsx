@@ -43,6 +43,15 @@ const Orders = (props) => {
                 ))}
                 </ul>
                 <button type="button" class="btn btn-primary" onClick={(event) => navigate(`/create-order`)} >Add an Order!</button>
+            
+                <section>
+                    <form action="http://localhost:8000/api/stripe/create-checkout-session" method="POST" >
+                        <input type="hidden" name="customAmount" value="200" />
+                        <button type="submit">
+                        Checkout
+                        </button>
+                    </form>
+                </section>
             </div>
         );
     }
