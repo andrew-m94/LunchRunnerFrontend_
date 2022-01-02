@@ -10,11 +10,15 @@ import CreateRun from './CreateRun/CreateRun';
 import Orders from './Orders/Orders';
 import CreateOrder from './CreateOrder/CreateOrder';
 import MyRuns from './MyRuns/MyRuns';
+import NavBar from './NavBar/NavBar';
+import Logout from './Logout/Logout';
 
 class App extends Component {
     constructor(props) {
         super(props);
-        this.state = { };
+        this.state = {
+            user: ''
+        };
         this.lunchGroup = [];
     }
 
@@ -33,10 +37,16 @@ class App extends Component {
     }
 
     render() { 
+        const user = this.state.user;
         return ( 
             <Router>
                 <Routes>
                     <Route path="/" element={<LandingPage />} />
+                </Routes>
+                {user && (
+                <NavBar user={user}/>
+                )}
+                <Routes>
                     <Route path="/register" element={<RegisterUser />} />
                     <Route path="/login" element={<Login />} />
                     <Route path="/home" element={<HomePage />} />
@@ -45,6 +55,7 @@ class App extends Component {
                     <Route path="/create-run" element={<CreateRun />} />
                     <Route path="/orders" element={<Orders lunchGroup={this.lunchGroup}/>} />
                     <Route path="/create-order" element={<CreateOrder lunchGroupId={this.lunchGroup.id}/>} />
+                    <Route path="/logout" element={<Logout />} />
                 </Routes>
             </Router>
         );
