@@ -1,5 +1,5 @@
 .footer {
-    background-color: #6a518f;
+    background-color: black;
     width: 100%;
     text-align: left;
     position: fixed;
@@ -8,12 +8,21 @@
 
 h4 {
     margin-left: 2em;
+    color: white;
 }
 
-a {
-   color: white; 
+.footer-link:link {
+   color: red; 
 }
 
-a:hover{
-    color: grey
+.footer-link:visited {
+    color:red;
+}
+
+.footer-link:hover {
+    color: yellow;
+}
+
+.footer-link:active {
+    color: red;
 }

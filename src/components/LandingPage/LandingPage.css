@@ -1,11 +1,26 @@
 .landing-page {
-    height: 100em;
-    width: 90%;
+    height: 100vh;
+    width: 100%;
     text-align: center;
     background-color: bisque;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .btn {
     padding: 1em;
     margin: 1em;
+}
+
+.title {
+    font-family: "Montserrat";
+    text-align: center;
+    font-size: 40pt;
+    margin-bottom: 2em;
+}
+
+.info {
+    font-family: "Esteban";
+    font-size: 20pt;
 }

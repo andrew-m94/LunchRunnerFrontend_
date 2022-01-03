@@ -1,8 +1,9 @@
 body {
-    background-color:black;
-    height: 100%;
+    background-color:bisque;
+    min-height: 100%;
+    width: 100%;
     font-family: "Montserrat";
-    color: white;
+    color: black;
     position: relative;
     text-align: center;
 }
