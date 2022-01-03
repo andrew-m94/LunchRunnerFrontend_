@@ -1,0 +1,17 @@
+.register-user {
+    height: 110vh;
+    width: 100%;
+    text-align: center;
+    background-color: bisque;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rfg {
+    padding: 1em;
+}
+
+label {
+    font-size: 16pt;
+}
