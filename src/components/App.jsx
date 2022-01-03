@@ -13,6 +13,8 @@ import MyRuns from './MyRuns/MyRuns';
 import NavBar from './NavBar/NavBar';
 import Logout from './Logout/Logout';
 import MyOrders from './MyOrders/MyOrders';
+import Footer from './Footer/Footer';
+import './App.css';
 
 class App extends Component {
     constructor(props) {
@@ -57,6 +59,7 @@ class App extends Component {
                     <Route path="/create-order" element={<CreateOrder lunchGroupId={this.lunchGroup.id}/>} />
                     <Route path="/logout" element={<Logout />} />
                 </Routes>
+                <Footer />
             </Router>
         );
     }
