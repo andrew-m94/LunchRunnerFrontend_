@@ -1,0 +1,19 @@
+.footer {
+    background-color: #6a518f;
+    width: 100%;
+    text-align: left;
+    position: fixed;
+    bottom: 0;
+}
+
+h4 {
+    margin-left: 2em;
+}
+
+a {
+   color: white; 
+}
+
+a:hover{
+    color: grey
+}
