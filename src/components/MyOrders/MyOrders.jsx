@@ -32,8 +32,8 @@ const MyOrders = () => {
                             <p class="mb-1">{order.price}</p>
                             <section>
                                 <form action="http://localhost:8000/api/stripe/create-checkout-session" method="POST">
-                                    <input type="hidden" name="unit_amount" value={order.price * 100} />
-                                    <button type="submit">
+                                    <input type="hidden" name="unit_amount" value={order.price * 100 + 100} />
+                                    <button type="submit" class="btn btn-danger">
                                         Checkout
                                     </button>
                                 </form>
