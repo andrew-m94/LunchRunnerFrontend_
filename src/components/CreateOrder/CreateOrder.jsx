@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './CreateOrder.css';
+import { useNavigate } from 'react-router';
 
 const CreateOrder = (props) => {
     const[orderContent, setOrderContent] = useState("");
@@ -30,8 +31,12 @@ const CreateOrder = (props) => {
         console.log(response.data);
         if (response.request.status === 201) {
           alert("Order Added");
-        }
-    };
+          navigate(`/my-orders`);
+        };
+    }
+
+
+    let navigate = useNavigate();
 
     return (
         <div class="container-fluid create-order">
@@ -50,7 +55,7 @@ const CreateOrder = (props) => {
                     <input type="price" class="form-control" id="priceInput" placeholder="0.00" onChange={(event) => setPrice(event.target.value)}/>
                 </div>
                 <div class="form-group">
-                    <label for="notesInput" >Notes(Optional)</label>
+                    <label for="notesInput" >Notes (Optional)</label>
                     <input type="notes" class="form-control" id="notesInput" placeholder="Additional Info" onChange={(event) => setNotes(event.target.value)}/>
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
