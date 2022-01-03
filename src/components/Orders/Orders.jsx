@@ -31,7 +31,7 @@ const Orders = (props) => {
     if (isPrivate === false) {
         return (
             <div class="container-fluid">
-                <h1>Orders</h1>
+                <h1>Current Orders for this Run</h1>
                 <ul class="list-group">
                 {orderList.filter(orders => orders.lunchgroup === props.lunchGroup.id).map(order => (
                 <li class="list-group-item">
@@ -43,15 +43,6 @@ const Orders = (props) => {
                 ))}
                 </ul>
                 <button type="button" class="btn btn-primary" onClick={(event) => navigate(`/create-order`)} >Add an Order!</button>
-            
-                <section>
-                    <form action="http://localhost:8000/api/stripe/create-checkout-session" method="POST">
-                        <input type="hidden" name="unit_amount" value={200} />
-                        <button type="submit">
-                        Checkout
-                        </button>
-                    </form>
-                </section>
             </div>
         );
     }
