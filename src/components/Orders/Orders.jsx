@@ -53,14 +53,17 @@ const Orders = (props) => {
     }
     else {
         return (
-            <div class="container-fluid">
-                <form onSubmit={(event) => handleSubmit(event)}>
-                    <div class="form-group">
-                        <label for="inviteCodeInput" >This group is private! Enter your invite code:</label>
-                        <input type="inviteCode" class="form-control" id="inviteCodeInput" placeholder="Invite Code" onChange={(event) => setInviteCode(event.target.value)}/>
-                    </div>
-                    <button type="submit" class="btn btn-danger">Submit</button>
-                </form>
+            <div class="container-fluid orders">
+                <div class="col">
+                    <img class="img lock" id="secure" src="/images/lock.png" alt="Cannot Be Displayed"/>
+                    <form onSubmit={(event) => handleSubmit(event)}>
+                        <div class="form-group">
+                            <label for="inviteCodeInput" >This group is private! Enter your invite code:</label>
+                            <input type="inviteCode" class="form-control invite" id="inviteCodeInput" placeholder="Invite Code" onChange={(event) => setInviteCode(event.target.value)}/>
+                        </div>
+                        <button type="submit" class="btn btn-danger">Submit</button>
+                    </form>
+                </div>
             </div>
         );
     }

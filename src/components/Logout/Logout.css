@@ -1,4 +1,4 @@
-.orders {
+.logout {
     height: 100vh;
     width: 100%;
     text-align: center;
@@ -6,19 +6,4 @@
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.oli {
-    margin: 1em;
-}
-
-.invite {
-    margin: 2em;
-    max-width: 50%;
-    margin-left: 25em;
-}
-
-.lock {
-    width: 10%;
-    margin: 2em;
 }

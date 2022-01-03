@@ -1,4 +1,5 @@
 import React from 'react';
+import './Logout.css';
 
 const Logout = () => {
 
@@ -8,11 +9,12 @@ const Logout = () => {
     }
 
     return(
-        <div align="center">
-            <h2>Are you sure you want to logout?</h2>
-            <br/>
-            <button type="submit" onClick={() => deleteToken()}>Logout</button>
-            <button type="submit" onClick={() => window.location = '/'}>Return Home</button>
+        <div class="container-fluid logout">
+            <div>
+                <h1>Are you sure you want to logout?</h1>
+                <button type="submit" class="btn btn-danger" onClick={() => deleteToken()}>Logout</button>
+                <button type="submit" class="btn btn-danger" onClick={() => window.location = '/'}>Return Home</button>
+            </div>
         </div>
     )
 };
