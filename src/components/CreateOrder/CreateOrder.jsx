@@ -58,7 +58,7 @@ const CreateOrder = (props) => {
                     <label for="notesInput" >Notes (Optional)</label>
                     <input type="notes" class="form-control" id="notesInput" placeholder="Additional Info" onChange={(event) => setNotes(event.target.value)}/>
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-danger">Submit</button>
             </form>
             </div>
             <div class="col"></div>
