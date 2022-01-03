@@ -6,8 +6,8 @@ const Footer = () => {
         <footer className="footer">
             <h4>
                 <div>Project created with React</div>
-                <div>11/19/2021</div>
-                <a href="https://github.com/andrew-m94/ReactMusicLibrary_">Github Repository</a>
+                <div>1/4/2022</div>
+                <a class="footer-link" href="https://github.com/andrew-m94/ReactMusicLibrary_">Github Repository</a>
             </h4>
         </footer>
     )
