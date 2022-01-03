@@ -53,7 +53,7 @@ class App extends Component {
                     <Route path="/my-runs" element = {<MyRuns />} />
                     <Route path="/create-run" element={<CreateRun />} />
                     <Route path="/orders" element={<Orders lunchGroup={this.lunchGroup}/>} />
-                    <Route path="/my-orders" element={<MyOrders lunchGroup={this.lunchGroup}/>} />
+                    <Route path="/my-orders" element={<MyOrders />} />
                     <Route path="/create-order" element={<CreateOrder lunchGroupId={this.lunchGroup.id}/>} />
                     <Route path="/logout" element={<Logout />} />
                 </Routes>
