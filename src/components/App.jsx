@@ -40,13 +40,11 @@ class App extends Component {
         const user = this.state.user;
         return ( 
             <Router>
-                <Routes>
-                    <Route path="/" element={<LandingPage />} />
-                </Routes>
                 {user && (
-                <NavBar user={user}/>
+                    <NavBar user={user}/>
                 )}
                 <Routes>
+                    <Route path="/" element={<LandingPage />} />
                     <Route path="/register" element={<RegisterUser />} />
                     <Route path="/login" element={<Login />} />
                     <Route path="/home" element={<HomePage />} />
