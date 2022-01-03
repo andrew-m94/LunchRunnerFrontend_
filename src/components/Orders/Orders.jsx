@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router';
+import './Orders.css';
 
 const Orders = (props) => {
     const[orderList, setOrderList] = useState([]);
@@ -30,19 +31,23 @@ const Orders = (props) => {
 
     if (isPrivate === false) {
         return (
-            <div class="container-fluid">
-                <h1>Current Orders for this Run</h1>
-                <ul class="list-group">
-                {orderList.filter(orders => orders.lunchgroup === props.lunchGroup.id).map(order => (
-                <li class="list-group-item">
-                    <div class="d-flex w-100 justify-content-between">
-                        <h5 class="mb-1">{order.order_content}</h5>
-                    </div>
-                    <p class="mb-1">{order.price}</p>
-                </li>
-                ))}
-                </ul>
-                <button type="button" class="btn btn-primary" onClick={(event) => navigate(`/create-order`)} >Add an Order!</button>
+            <div class="container-fluid orders">
+                <div class="col">
+                    <h1>Current Orders for this Run</h1>
+                    <button type="button" class="btn btn-danger" onClick={(event) => navigate(`/create-order`)} >Add an Order!</button>
+                </div>
+                <div class="col">
+                    <ul class="list-group">
+                    {orderList.filter(orders => orders.lunchgroup === props.lunchGroup.id).map(order => (
+                    <li class="list-group-item oli">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">{order.order_content}</h5>
+                        </div>
+                        <p class="mb-1">{order.price}</p>
+                    </li>
+                    ))}
+                    </ul>
+                </div>
             </div>
         );
     }
@@ -54,7 +59,7 @@ const Orders = (props) => {
                         <label for="inviteCodeInput" >This group is private! Enter your invite code:</label>
                         <input type="inviteCode" class="form-control" id="inviteCodeInput" placeholder="Invite Code" onChange={(event) => setInviteCode(event.target.value)}/>
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-danger">Submit</button>
                 </form>
             </div>
         );

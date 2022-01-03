@@ -1,4 +1,4 @@
-.create-run {
+.create-order {
     height: 100vh;
     width: 100%;
     text-align: center;
@@ -6,17 +6,4 @@
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.runner {
-    width: 75%;
-}
-
-.check-box {
-    padding: 10px;
-    margin: 2em;
-}
-
-.nav-runner {
-    color: red;
 }

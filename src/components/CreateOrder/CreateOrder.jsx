@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import './CreateOrder.css';
 
 const CreateOrder = (props) => {
     const[orderContent, setOrderContent] = useState("");
@@ -33,10 +34,15 @@ const CreateOrder = (props) => {
     };
 
     return (
-        <div class="container-fluid">
+        <div class="container-fluid create-order">
+            <div class="col">
+            <img class="img bag" id="shopping-art" src="/images/bag.png" alt="Cannot Be Displayed"/>
+            </div>
+            <div class="col">
             <form onSubmit={(event) => handleSubmit(event)}>
+                <h1>Create Your Order!</h1>
                 <div class="form-group">
-                    <label for="orderContentInput" >Pickup Location</label>
+                    <label for="orderContentInput" >Order Details</label>
                     <input type="orderContent" class="form-control" id="orderContentInput" placeholder="Enter Order Here" onChange={(event) => setOrderContent(event.target.value)}/>
                     </div>
                 <div class="form-group">
@@ -49,6 +55,8 @@ const CreateOrder = (props) => {
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
+            </div>
+            <div class="col"></div>
         </div>
     );
 }

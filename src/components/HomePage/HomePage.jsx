@@ -20,11 +20,11 @@ const HomePage = () => {
 
     return ( 
         <div class="container-fluid home-page">
-            <div class="col row hlc">
-            <img class="img-fluid bag" id="shopping-art" src="/images/bag.png" alt="Cannot Be Displayed"/>
-            <div>
-                <a class="btn btn-danger" href="/find-runner" role="button">Get Lunch</a>
-            </div>
+            <div class="col hlc">
+                <img class="img bag" id="shopping-art" src="/images/bag.png" alt="Cannot Be Displayed"/>
+                <div>
+                    <a class="btn btn-danger" href="/find-runner" role="button">Get Lunch</a>
+                </div>
             </div>
             <div class="col">
                 <div>

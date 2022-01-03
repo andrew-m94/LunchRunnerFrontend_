@@ -74,12 +74,12 @@ const CreateRun = () => {
                         <input type="dropTime" class="form-control" id="dropTimeInput" placeholder="HH:MM" onChange={(event) => setDropTime(event.target.value)}/>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="true" id="flexCheckDefault" onChange={(event) => setIsPrivate(event.target.value)}/>
+                        <input class="form-check-input check-box" type="checkbox" value="true" id="flexCheckDefault" onChange={(event) => setIsPrivate(event.target.value)}/>
                         <label class="form-check-label" for="flexCheckDefault">
                             Invite Required?
                         </label>
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-danger">Submit</button>
                 </form>
                 </div>
             <div class="col">

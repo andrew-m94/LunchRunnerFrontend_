@@ -1,5 +1,5 @@
-.create-run {
-    height: 100vh;
+.orders {
+    height: 110vh;
     width: 100%;
     text-align: center;
     background-color: bisque;
@@ -8,15 +8,6 @@
     align-items: center;
 }
 
-.runner {
-    width: 75%;
-}
-
-.check-box {
-    padding: 10px;
-    margin: 2em;
-}
-
-.nav-runner {
-    color: red;
+.oli {
+    margin: 1em;
 }

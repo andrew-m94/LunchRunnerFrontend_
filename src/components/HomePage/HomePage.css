@@ -1,5 +1,5 @@
 .home-page {
-    height: 110vh;
+    height: 120vh;
     width: 100%;
     text-align: center;
     background-color: bisque;
@@ -9,12 +9,6 @@
 }
 .bag {
     max-width: 50%;
-}
-
-.hlc {
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .runner {
