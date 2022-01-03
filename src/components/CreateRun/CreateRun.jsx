@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import axios from 'axios';
+import './CreateRun.css'
 
 const CreateRun = () => {
     const[pickupFrom, setPickupFrom] = useState("");
@@ -52,32 +53,38 @@ const CreateRun = () => {
 
     return ( 
 
-        <div class="container-fluid">
-            <form onSubmit={(event) => handleSubmit(event)}>
-                <div class="form-group">
-                    <label for="pickupFromInput" >Pickup Location</label>
-                    <input type="pickupFrom" class="form-control" id="pickupFromInput" placeholder="Pickup Location" onChange={(event) => setPickupFrom(event.target.value)}/>
+        <div class="container-fluid create-run">
+            <div class="col"></div>
+            <div class="col">
+                <form onSubmit={(event) => handleSubmit(event)}>
+                    <div class="form-group">
+                        <label for="pickupFromInput" >Pickup Location</label>
+                        <input type="pickupFrom" class="form-control" id="pickupFromInput" placeholder="Pickup Location" onChange={(event) => setPickupFrom(event.target.value)}/>
+                        </div>
+                    <div class="form-group">
+                        <label for="departureTimeInput" >Departure Time</label>
+                        <input type="departureTime" class="form-control" id="departureTimeInput" placeholder="HH:MM" onChange={(event) => setDepartureTime(event.target.value)}/>
                     </div>
-                <div class="form-group">
-                    <label for="departureTimeInput" >Departure Time</label>
-                    <input type="departureTime" class="form-control" id="departureTimeInput" placeholder="HH:MM" onChange={(event) => setDepartureTime(event.target.value)}/>
+                    <div class="form-group">
+                        <label for="dropLocationInput" >Drop Location</label>
+                        <input type="dropLocation" class="form-control" id="dropLocationInput" placeholder="Drop Location" onChange={(event) => setDropLocation(event.target.value)}/>
+                    </div>
+                    <div class="form-group">
+                        <label for="dropTimeInput" >Estimated Return Time</label>
+                        <input type="dropTime" class="form-control" id="dropTimeInput" placeholder="HH:MM" onChange={(event) => setDropTime(event.target.value)}/>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="true" id="flexCheckDefault" onChange={(event) => setIsPrivate(event.target.value)}/>
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Invite Required?
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
                 </div>
-                <div class="form-group">
-                    <label for="dropLocationInput" >Drop Location</label>
-                    <input type="dropLocation" class="form-control" id="dropLocationInput" placeholder="Drop Location" onChange={(event) => setDropLocation(event.target.value)}/>
-                </div>
-                <div class="form-group">
-                    <label for="dropTimeInput" >Estimated Return Time</label>
-                    <input type="dropTime" class="form-control" id="dropTimeInput" placeholder="HH:MM" onChange={(event) => setDropTime(event.target.value)}/>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="true" id="flexCheckDefault" onChange={(event) => setIsPrivate(event.target.value)}/>
-                    <label class="form-check-label" for="flexCheckDefault">
-                        Invite Required?
-                    </label>
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
+            <div class="col">
+            <img class="img-fluid runner" id = "page-art" src="/images/running.png" alt="Cannot Be Displayed"/>
+            </div>
         </div>
     );
 }

@@ -1,0 +1,13 @@
+.create-run {
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    background-color: bisque;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.runner {
+    width: 75%;
+}

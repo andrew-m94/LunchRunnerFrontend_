@@ -1,0 +1,28 @@
+.find-runner {
+    height: 150vh;
+    width: 100%;
+    text-align: center;
+    background-color: bisque;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ulfr {
+    width: 100%;   
+}
+
+.rcfr {
+    margin-right: 1em;
+    padding-right: 1em;
+}
+
+.list-item {
+    padding: 1em;
+    margin: 1em;
+    border-radius: 5%;
+}
+
+.find {
+    font-size: 40pt;
+}

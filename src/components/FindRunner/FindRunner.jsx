@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router';
+import './FindRunner.css';
 
 const FindRunner = (props) => {
     const[runList, setRunList] = useState([]);
@@ -24,18 +25,23 @@ const FindRunner = (props) => {
     let navigate = useNavigate();
 
     return ( 
-        <div class="container-fluid">
-            <h1>FindRunner</h1>
-            <ul class="list-group">
-            {runList.map(run => (
-                <button type="button" class="list-group-item list-group-item-action" onClick={(event) => {handleClick(event, run); navigate(`/orders`)}}>
-                    <div class="d-flex w-100 justify-content-between">
-                        <h5 class="mb-1">From: {run.pickup_from}</h5>
-                    </div>
-                    <p class="mb-1">Leaving at: {run.departure_time}</p>
-                </button>
-            ))}
-            </ul>
+        <div class="container-fluid find-runner">
+            <div class="col">
+                <h1 class="find">Find a Runner</h1>
+                <h3 class="available">Available Runs</h3>
+            </div>
+            <div class="col rcfr">
+                <ul class="list-group ulfr">
+                {runList.map(run => (
+                    <button type="button" class="list-group-item list-group-item-action list-item" onClick={(event) => {handleClick(event, run); navigate(`/orders`)}}>
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">From: {run.pickup_from}</h5>
+                        </div>
+                        <p class="mb-1">Leaving at: {run.departure_time}</p>
+                    </button>
+                ))}
+                </ul>
+            </div>
         </div>
     );
 }

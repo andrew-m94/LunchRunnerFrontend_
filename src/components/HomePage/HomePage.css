@@ -1,0 +1,22 @@
+.home-page {
+    height: 110vh;
+    width: 100%;
+    text-align: center;
+    background-color: bisque;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.bag {
+    max-width: 50%;
+}
+
+.hlc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.runner {
+    max-width: 75%;
+}
