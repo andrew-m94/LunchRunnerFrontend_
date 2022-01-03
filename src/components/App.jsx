@@ -15,7 +15,6 @@ import Logout from './Logout/Logout';
 import MyOrders from './MyOrders/MyOrders';
 import Footer from './Footer/Footer';
 import './App.css';
-
 class App extends Component {
     constructor(props) {
         super(props);
