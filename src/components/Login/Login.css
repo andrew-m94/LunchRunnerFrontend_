@@ -1,5 +1,5 @@
-.register-user {
-    height: 110vh;
+.login {
+    height: 100vh;
     width: 100%;
     text-align: center;
     background-color: bisque;
@@ -8,10 +8,11 @@
     align-items: center;
 }
 
-.rfg {
+.lfg {
     padding: 1em;
 }
 
-label {
-    font-size: 20pt;
+.lcc {
+    margin-left: 1em;
+    margin-right: 1em;
 }

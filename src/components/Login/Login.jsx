@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import axios from 'axios';
+import './Login.css';
 
 const Login = () => {
     const [username, setUsername] = useState("");
@@ -15,18 +16,25 @@ const Login = () => {
     }
 
     return ( 
-        <div class="container-fluid">
-            <form onSubmit={(event) => handleSubmit(event)}>
-                <div class="form-group">
-                    <label for="usernameInput" >Username </label>
-                    <input type="username" class="form-control" id="usernameInput" placeholder="Username" onChange={(event) => setUsername(event.target.value)}/>
+        <div class="container-fluid login">
+            <div class="col" ></div>
+            <div class="col lcc" >
+                <h1>Sign in!</h1>
+                <form onSubmit={(event) => handleSubmit(event)}>
+                    <div class="form-group lfg">
+                        <label for="usernameInput" >Username </label>
+                        <input type="username" class="form-control" id="usernameInput" placeholder="Username" onChange={(event) => setUsername(event.target.value)}/>
+                        </div>
+                    <div class="form-group lfg">
+                        <label for="passwordInput" >Password</label>
+                        <input type="password" class="form-control" id="passwordInput" placeholder="Password" onChange={(event) => setPassword(event.target.value)}/>
                     </div>
-                <div class="form-group">
-                    <label for="passwordInput" >Password</label>
-                    <input type="password" class="form-control" id="passwordInput" placeholder="Password" onChange={(event) => setPassword(event.target.value)}/>
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
+                    <button type="submit" class="btn btn-danger">Submit</button>
+                </form>
+            </div>
+            <div class="col" >
+            <img class="img-fluid" id = "page-art" src="/images/running.png" alt="Cannot Be Displayed"/>
+            </div>
         </div>
     );      
 }
