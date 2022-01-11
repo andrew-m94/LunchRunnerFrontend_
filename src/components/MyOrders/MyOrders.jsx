@@ -28,6 +28,7 @@ const MyOrders = () => {
                         <li class="list-group-item moli">
                             <div class="d-flex w-100 justify-content-between">
                                 <h5 class="mb-1">{order.order_content}</h5>
+                                <div class="badge bg-danger rounded-pill">{order.lunchgroup.status}</div>
                             </div>
                             <p class="mb-1">{order.price}</p>
                             <section>
