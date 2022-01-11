@@ -1,12 +1,24 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
+import { useLocation } from 'react-router-dom';
 import './MyOrders.css';
 
 const MyOrders = () => {
     const[orderList, setOrderList] = useState([]);
+    const location = useLocation();
 
     useEffect( () => {
-        getMyOrders()
+        getMyOrders();
+        const values = location.search;
+        const sp = new URLSearchParams(values);
+
+        if (sp.has("success") === true) {
+            alert('Order placed! You will recieve a confirmation email.')
+        }
+
+        if (sp.has("canceled") === true) {
+            alert('Order canceled -- proceed to checkout to complete your order.')
+        }
     }, [])
 
     let getMyOrders = async () => {
