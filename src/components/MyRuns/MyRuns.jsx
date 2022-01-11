@@ -44,7 +44,21 @@ const MyRuns = () => {
                     <li class="list-group-item list-group-item-action mrli">
                         <div class="d-flex w-100 justify-content-between">
                             <h5 class="mb-1">From: {run.pickup_from}</h5>
-                            <div class="badge bg-danger rounded-pill">{run.status}</div>
+                            {run.status === "Pending" &&
+                            <React.Fragment>
+                                <div class="badge bg-danger rounded-pill">{run.status}</div>
+                            </React.Fragment>
+                            }
+                            {run.status === "Picked Up" &&
+                            <React.Fragment>
+                                <div class="badge bg-warning rounded-pill">{run.status}</div>
+                            </React.Fragment>
+                            }
+                            {run.status === "Delivered" &&
+                            <React.Fragment>
+                                <div class="badge bg-success rounded-pill">{run.status}</div>
+                            </React.Fragment>
+                            }
                         </div>
                         <p class="mb-1">Leaving at: {run.departure_time}</p>
                         {run.invite_code &&

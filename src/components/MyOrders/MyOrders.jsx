@@ -28,7 +28,21 @@ const MyOrders = () => {
                         <li class="list-group-item moli">
                             <div class="d-flex w-100 justify-content-between">
                                 <h5 class="mb-1">{order.order_content}</h5>
+                                {order.lunchgroup.status === "Pending" &&
+                                <React.Fragment>
                                 <div class="badge bg-danger rounded-pill">{order.lunchgroup.status}</div>
+                                </React.Fragment>
+                                }
+                                {order.lunchgroup.status === "Picked Up" &&
+                                <React.Fragment>
+                                    <div class="badge bg-warning rounded-pill">{order.lunchgroup.status}</div>
+                                </React.Fragment>
+                                }
+                                {order.lunchgroup.status === "Delivered" &&
+                                <React.Fragment>
+                                    <div class="badge bg-success rounded-pill">{order.lunchgroup.status}</div>
+                                </React.Fragment>
+                                }
                             </div>
                             <p class="mb-1">{order.price}</p>
                             <section>
