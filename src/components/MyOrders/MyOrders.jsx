@@ -12,11 +12,6 @@ const MyOrders = () => {
 
     useEffect( () => {
         getMyOrders();
-
-        if (sp.has("success") === true) {
-            alert('Order placed! You will recieve a confirmation email.');
-        }
-
         if (sp.has("canceled") === true) {
             alert('Order canceled -- proceed to checkout to complete your order.');
         }
@@ -37,12 +32,13 @@ const MyOrders = () => {
             console.log(orderList[0])
             let response = axios.patch('http://127.0.0.1:8000/api/orders/order/'+ pk + '/', status, {headers: {Authorization: 'Bearer ' + jwt}});
             console.log(response);
+            alert('Order placed! You will recieve a confirmation email.')
             setPaymentStatus(true);
         }
     }
 
     if (orderList.length > 0) {
-        updatePaymentStatus()
+        updatePaymentStatus();
     }
 
     return (
