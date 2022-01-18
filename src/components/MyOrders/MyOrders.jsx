@@ -5,27 +5,44 @@ import './MyOrders.css';
 
 const MyOrders = () => {
     const[orderList, setOrderList] = useState([]);
+    const[paymentStatus, setPaymentStatus] = useState(false)
     const location = useLocation();
+    const values = location.search;
+    const sp = new URLSearchParams(values);
 
     useEffect( () => {
         getMyOrders();
-        const values = location.search;
-        const sp = new URLSearchParams(values);
 
         if (sp.has("success") === true) {
-            alert('Order placed! You will recieve a confirmation email.')
+            alert('Order placed! You will recieve a confirmation email.');
         }
 
         if (sp.has("canceled") === true) {
-            alert('Order canceled -- proceed to checkout to complete your order.')
+            alert('Order canceled -- proceed to checkout to complete your order.');
         }
-    }, [])
+    }, [paymentStatus])
 
     let getMyOrders = async () => {
         const jwt = localStorage.getItem('token');
-        let response = await axios.get('http://127.0.0.1:8000/api/orders/', {headers: {Authorization: 'Bearer ' + jwt}})
+        let response = await axios.get('http://127.0.0.1:8000/api/orders/', {headers: {Authorization: 'Bearer ' + jwt}});
         console.log(response.data);
         setOrderList(response.data);
+    }
+
+    let updatePaymentStatus = async () => {
+        if (sp.has("success") === true && paymentStatus !== true) {
+            const jwt = localStorage.getItem('token');
+            let status = {status: "Paid"};
+            let pk = orderList[0].id;
+            console.log(orderList[0])
+            let response = axios.patch('http://127.0.0.1:8000/api/orders/order/'+ pk + '/', status, {headers: {Authorization: 'Bearer ' + jwt}});
+            console.log(response);
+            setPaymentStatus(true);
+        }
+    }
+
+    if (orderList.length > 0) {
+        updatePaymentStatus()
     }
 
     return (
@@ -65,14 +82,18 @@ const MyOrders = () => {
                                 </React.Fragment>
                                 }
                             </div>
-                            <section>
-                                <form action="http://localhost:8000/api/stripe/create-checkout-session" method="POST">
-                                    <input type="hidden" name="unit_amount" value={order.price * 100 + 100} />
-                                    <button type="submit" class="btn btn-danger">
-                                        Checkout
-                                    </button>
-                                </form>
-                            </section>
+                            {paymentStatus === false && order.status === "Unpaid"  &&
+                            <React.Fragment>   
+                                <section>
+                                    <form action="http://localhost:8000/api/stripe/create-checkout-session" method="POST">
+                                        <input type="hidden" name="unit_amount" value={order.price * 100 + 100} />
+                                        <button type="submit" class="btn btn-danger">
+                                            Checkout
+                                        </button>
+                                    </form>
+                                </section>
+                            </React.Fragment>
+                            }
                         </li>
                     ))}
                 </ul>
