@@ -43,7 +43,7 @@ const Orders = (props) => {
                         <div class="d-flex w-100 justify-content-between">
                             <h5 class="mb-1">{order.order_content}</h5>
                         </div>
-                        <p class="mb-1">{order.price}</p>
+                        <p class="mb-1">$ {order.price}</p>
                     </li>
                     ))}
                     </ul>

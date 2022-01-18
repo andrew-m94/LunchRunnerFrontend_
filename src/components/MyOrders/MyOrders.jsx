@@ -56,7 +56,7 @@ const MyOrders = () => {
                                 </React.Fragment>
                                 }
                             </div>
-                            <p class="mb-1">{order.price}</p>
+                            <p class="mb-1">$ {order.price}</p>
                             <div>Delivery Location: {order.lunchgroup.drop_location}</div>
                             <div>
                                 {order.lunchgroup.status !== "Delivered" &&
