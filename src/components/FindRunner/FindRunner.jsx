@@ -38,6 +38,7 @@ const FindRunner = (props) => {
                             <h5 class="mb-1">From: {run.pickup_from}</h5>
                         </div>
                         <p class="mb-1">Leaving at: {run.departure_time}</p>
+                        <div>Estimated Return Time: {run.drop_time}</div>
                     </button>
                 ))}
                 </ul>
