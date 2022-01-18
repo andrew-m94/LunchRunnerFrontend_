@@ -57,6 +57,14 @@ const MyOrders = () => {
                                 }
                             </div>
                             <p class="mb-1">{order.price}</p>
+                            <div>Delivery Location: {order.lunchgroup.drop_location}</div>
+                            <div>
+                                {order.lunchgroup.status !== "Delivered" &&
+                                <React.Fragment>
+                                    <div>Estimated Arrival Time: {order.lunchgroup.drop_time}</div>
+                                </React.Fragment>
+                                }
+                            </div>
                             <section>
                                 <form action="http://localhost:8000/api/stripe/create-checkout-session" method="POST">
                                     <input type="hidden" name="unit_amount" value={order.price * 100 + 100} />
