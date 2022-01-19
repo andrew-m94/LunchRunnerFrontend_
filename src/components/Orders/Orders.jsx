@@ -38,7 +38,7 @@ const Orders = (props) => {
                 </div>
                 <div class="col">
                     <ul class="list-group">
-                    {orderList.filter(orders => orders.lunchgroup === props.lunchGroup.id).map(order => (
+                    {orderList.filter(orders => orders.lunchgroup.id === props.lunchGroup.id).map(order => (
                     <li class="list-group-item oli">
                         <div class="d-flex w-100 justify-content-between">
                             <h5 class="mb-1">{order.order_content}</h5>
